@@ -16,7 +16,7 @@ COPY --from=builder /opt/jre-minimal /opt/jre-minimal
 ENV LANG=C.UTF-8 \
     PATH=${PATH}:/opt/jre-minimal/bin
 
-ADD modules /opt/app/modules
+COPY target/modules /opt/app/modules
 
 ARG JVM_OPTS
 ENV JVM_OPTS=${JVM_OPTS}
